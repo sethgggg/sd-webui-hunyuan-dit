@@ -16,7 +16,7 @@ The extension helps you to use [Hunyuan DiT Model](https://github.com/Tencent/Hu
 
 ### Installation
 
-1. You can install this extension via the webui extension downloader by copying the git repository.
+1. You can install this extension via the webui extension downloader by copying the git repository ```https://github.com/sethgggg/sd-webui-hunyuan-dit.git```
 
 ![install](examples/20240709-000053.jpg)
 
