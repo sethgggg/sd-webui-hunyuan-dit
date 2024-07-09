@@ -351,6 +351,8 @@ def prepare_latents_img2img(vae_scale_factor, scheduler, image, batch_size, num_
 def guess_dit_model(state_dict):
     if "state_dict" in state_dict:
         state_dict = state_dict["state_dict"]
+    elif "module" in state_dict:
+        state_dict = state_dict["module"]
     if "mlp_t5.0.weight" in state_dict:
         return "hunyuan-original"
     elif "text_embedder.linear_1.weight" in state_dict:
@@ -361,6 +363,8 @@ def guess_dit_model(state_dict):
 def convert_hunyuan_to_diffusers(state_dict):
     if "state_dict" in state_dict:
         state_dict = state_dict["state_dict"]
+    elif "module" in state_dict:
+        state_dict = state_dict["module"]
     # input_size -> sample_size, text_dim -> cross_attention_dim
     num_layers = 40
     for i in range(num_layers):
